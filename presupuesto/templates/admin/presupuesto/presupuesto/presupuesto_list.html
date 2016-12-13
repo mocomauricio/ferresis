@@ -1,0 +1,126 @@
+{% extends "admin/base_site2.html" %}
+ 
+{% block title %}Lista de Presupuestos{% endblock %}
+
+{% block breadcrumbs %} 
+    <a href="/admin/">Inicio</a>
+    &rsaquo; <a href="/admin/presupuesto/">Presupuesto</a>
+    &rsaquo; Presupuestos
+{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+	<!--
+	<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+	<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('.timezonewarning').prop({ 'display': 'none' });
+		});
+	</script>
+	-->
+{% endblock %}
+
+{% block content %}
+	<div id="content-main">  
+		<ul class="object-tools">
+			{% if perms.presupuesto.add_presupuesto %}
+			<li>
+				<a href="/admin/presupuesto/presupuesto/add/" class="addlink">
+					Agregar Presupuesto
+				</a>
+			</li>
+			{% endif %}
+		</ul>
+
+		<div class="module" id="changelist">
+			<div id="toolbar">
+				<form id="changelist-search" method="get">
+					<div><!-- DIV needed for valid HTML -->
+						<!--
+						<table>
+							<tbody>
+								<tr>
+									<td><label for="id_numero">Numero</label></td>
+									<td><input type="number" size="40" name="numero" value="{{ numero }}" id="id_numero" /></td>		
+
+									<td><label for="id_cliente">Cliente</label></td>
+									<td><input type="text" size="40" name="cliente" value="{{ cliente }}" id="id_cliente" /></td>
+								</tr>
+
+								<tr>
+									<td><label for="id_fecha_desde">Fecha Desde</label></td>
+									<td><input type="text" class="vDateField" name="fecha_desde" value="{{ fecha_desde }}" id="id_fecha_desde" /></td>						
+							
+									<td><label for="id_fecha_hasta">Fecha Hasta</label></td>
+									<td><input type="text" class="vDateField" name="nombre" value="{{ fecha_hasta }}" id="id_fecha_hasta" /></td>
+								</tr>
+							</tbody>
+						</table>
+						-->
+						<label for="searchbar"><img src="/static/admin/img/search.svg" alt="Search" /></label>
+						<input type="text" size="40" name="q" value="" id="searchbar" placeholder="buscar por nombre o RUC de cliente..."/>						
+						<input type="submit" value="Buscar" />
+					</div>
+				</form>
+			</div>
+			<!-- <script type="text/javascript">document.getElementById("searchbar").focus();</script>-->
+
+			<div class="results">
+				<table id="result_list">
+					<thead>
+					<tr>
+						<th>NUMERO</th>
+						<th>FECHA</th>
+						<th>CLIENTE</th>
+						<th>TOTAL</th>
+						<th>ACCIONES<th>
+					</tr>
+					</thead>
+					<tbody>
+						{% for presupuesto in object_list %}
+						<tr>
+							<td>{{ presupuesto.id|default_if_none:"&nbsp;" }}</td>
+							<td>{{ presupuesto.fecha|default_if_none:"&nbsp;" }}</td>
+							<td>{{ presupuesto.cliente.nombre|default_if_none:"&nbsp;" }}</td>
+							<td>{{ presupuesto.total|default_if_none:"&nbsp;" }}</td>
+							<td>
+								{% if perms.presupuesto.change_presupuesto %}
+								<a href="/admin/presupuesto/presupuesto/{{ presupuesto.id }}/change" class="changelink">Modificar</a>&nbsp;
+								{% endif %}
+
+								{% if perms.presupuesto.delete_presupuesto %}
+								<a href="/admin/presupuesto/presupuesto/{{ presupuesto.id }}/delete"  class="deletelink">Eliminar</a>&nbsp;
+								{% endif %}
+								<a href="/admin/presupuesto/presupuesto/{{ presupuesto.id }}/print">Imprimir</a>&nbsp;
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+
+				{% if is_paginated %}
+				<div class="pagination">
+					<span class="page-links">
+						<ul class="pager">
+							{% if page_obj.has_previous %}
+							<li><a href="/admin/presupuesto/presupuesto/?page={{ page_obj.previous_page_number }}&q={{ q }}">Anterior</a></li>
+							{% endif %}
+							<span class="page-current">
+								Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+							</span>
+							{% if page_obj.has_next %}
+							<li><a href="/admin/presupuesto/presupuesto/?page={{ page_obj.next_page_number }}&q={{ q }}">Siguiente</a></li>
+							{% endif %}
+						</ul>
+					</span>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>  
+	<br class="clear" />
+
+{% endblock %}

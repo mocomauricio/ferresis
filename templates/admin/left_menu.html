@@ -1,0 +1,262 @@
+<ul class="nav" id="side-menu">
+	<li>
+		<a class="active" href="/admin/"><i class="fa fa-home fa-fw"></i> INICIO </a>
+	</li>                      
+
+{% if '/admin/auth' in request.path or '/admin/sistema' in request.path %}
+	{% if perms.auth.add_user or perms.auth.change_user or perms.auth.delete_user %}
+	<li>
+		<a href="#">USUARIOS<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.auth.add_user %}
+			<li>
+				<a href="/admin/auth/user/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+			
+			<li>
+				<a href="/admin/auth/user/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+
+	
+	{% if perms.auth.add_group or perms.auth.change_group or perms.auth.delete_group %}
+	<li>
+		<a href="#">GRUPOS<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.auth.add_group %}
+			<li>
+				<a href="/admin/auth/group/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+	
+			<li>
+				<a href="/admin/auth/group/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+
+
+{% elif '/admin/cliente' in request.path %}
+
+	{% if perms.cliente.add_cliente %}
+	<li>
+		<a href="/admin/cliente/cliente/add/">AGREGAR</a>
+	</li>
+	{% endif %}
+	
+	{% if perms.cliente.add_cliente or perms.cliente.change_cliente or perms.cliente.delete_cliente %}
+	<li>
+		<a href="/admin/cliente/cliente/">LISTAR</a>
+	</li>
+	{% endif %}
+	
+
+{% elif '/admin/proveedor' in request.path %}
+
+	{% if perms.proveedor.add_proveedor %}
+	<li>
+		<a href="/admin/proveedor/proveedor/add/">AGREGAR</a>
+	</li>
+	{% endif %}
+	
+	{% if perms.proveedor.add_proveedor or perms.proveedor.change_proveedor or perms.proveedor.delete_proveedor %}
+	<li>
+		<a href="/admin/proveedor/proveedor/">LISTAR</a>
+	</li>
+	{% endif %}
+	
+
+
+
+
+
+
+
+{% elif '/admin/producto' in request.path %}
+	{% if perms.producto.add_unidadmedida or perms.producto.change_unidadmedida or perms.producto.delete_unidadmedida %}
+	<li>
+		<a href="#">UNIDADES DE MEDIDA<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.producto.add_unidadmedida %}
+			<li>
+				<a href="/admin/producto/unidadmedida/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+			
+			<li>
+				<a href="/admin/producto/unidadmedida/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+	
+	{% if perms.producto.add_categoria or perms.producto.change_categoria or perms.producto.delete_categoria %}
+	<li>
+		<a href="#">CATEGORIAS DE PRODUCTO<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.producto.add_categoria %}
+			<li>
+				<a href="/admin/producto/categoria/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+	
+			<li>
+				<a href="/admin/producto/categoria/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+
+	{% if perms.producto.add_producto or perms.producto.change_producto or perms.producto.delete_producto %}
+	<li>
+		<a href="#">PRODUCTO<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.producto.add_producto %}
+			<li>
+				<a href="/admin/producto/producto/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+	
+			<li>
+				<a href="/admin/producto/producto/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+
+
+
+	{% if perms.producto.add_insercioninmediata or perms.producto.change_insercioninmediata or perms.producto.delete_insercioninmediata %}
+	<li>
+		<a href="#">ALTAS<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.producto.add_insercioninmediata %}
+			<li>
+				<a href="/admin/producto/insercioninmediata/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+	
+			<li>
+				<a href="/admin/producto/insercioninmediata/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+
+	{% if perms.producto.add_sustraccioninmediata or perms.producto.change_sustraccioninmediata or perms.producto.delete_sustraccioninmediata %}
+	<li>
+		<a href="#">BAJAS<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.producto.add_sustraccioninmediata %}
+			<li>
+				<a href="/admin/producto/sustraccioninmediata/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+	
+			<li>
+				<a href="/admin/producto/sustraccioninmediata/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+
+
+{% elif '/admin/compra' in request.path %}
+
+	{% if perms.compra.add_compra %}
+	<li>
+		<a href="/admin/compra/compra/add/">AGREGAR</a>
+	</li>
+	{% endif %}
+	
+	{% if perms.compra.add_compra or perms.compra.change_compra or perms.compra.delete_compra %}
+	<li>
+		<a href="/admin/compra/compra/">LISTAR</a>
+	</li>
+	{% endif %}
+
+{% elif '/admin/venta' in request.path %}
+
+	{% if perms.venta.add_venta %}
+	<li>
+		<a href="/admin/venta/venta/add/">AGREGAR</a>
+	</li>
+	{% endif %}
+	
+	{% if perms.venta.add_venta or perms.venta.change_venta or perms.venta.delete_venta %}
+	<li>
+		<a href="/admin/venta/venta/">LISTAR</a>
+	</li>
+	{% endif %}
+
+{% elif '/admin/presupuesto' in request.path %}
+
+	{% if perms.presupuesto.add_presupuesto %}
+	<li>
+		<a href="/admin/presupuesto/presupuesto/add/">AGREGAR</a>
+	</li>
+	{% endif %}
+	
+	{% if perms.presupuesto.add_presupuesto or perms.presupuesto.change_presupuesto or perms.presupuesto.delete_presupuesto %}
+	<li>
+		<a href="/admin/presupuesto/presupuesto/">LISTAR</a>
+	</li>
+	{% endif %}
+
+
+{% elif '/admin/caja' in request.path %}
+	{% if perms.caja.add_aperturacaja or perms.caja.change_aperturacaja or perms.caja.delete_aperturacaja %}
+	<li>
+		<a href="#">APERTURAS<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.caja.add_aperturacaja %}
+			<li>
+				<a href="/admin/caja/aperturacaja/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+
+			<li>
+				<a href="/admin/caja/aperturacaja/">LISTAR</a>
+			</li>
+
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}
+	
+	{% if perms.caja.add_cierrecaja or perms.caja.change_cierrecaja or perms.caja.delete_cierrecaja %}
+	<li>
+		<a href="#">CIERRES<span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level">
+			{% if perms.caja.add_cierrecaja %}
+			<li>
+				<a href="/admin/caja/cierrecaja/add/">AGREGAR</a>
+			</li>
+			{% endif %}
+			
+			<li>
+				<a href="/admin/caja/cierrecaja/">LISTAR</a>
+			</li>
+		</ul>
+		<!-- /.nav-second-level -->
+	</li>
+	{% endif %}    
+
+
+
+
+
+
+{% endif %}
+</ul>

@@ -1,0 +1,985 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ca",
+				"cantidad_vendida_movimiento"
+			],
+			[
+				"cantidad_",
+				"cantidad_comprada_movimiento"
+			],
+			[
+				"can",
+				"cantidad_vendida"
+			],
+			[
+				"fecha_f",
+				"fecha_final_movimiento"
+			],
+			[
+				"mv",
+				"movimiento_fecha_inicial"
+			],
+			[
+				"ve",
+				"venta"
+			],
+			[
+				"usu",
+				"usuario_comercial"
+			],
+			[
+				"ad",
+				"admin"
+			],
+			[
+				"c",
+				"cliente"
+			],
+			[
+				"D",
+				"DetallePresupuesto"
+			],
+			[
+				"P",
+				"Presupuesto"
+			],
+			[
+				"sut",
+				"Subtotal"
+			],
+			[
+				"produ",
+				"Producto"
+			],
+			[
+				"det",
+				"detalle"
+			],
+			[
+				"get",
+				"get_precios_venta"
+			],
+			[
+				"get_pre",
+				"get_precios_compra"
+			],
+			[
+				"Comr",
+				"Compra"
+			],
+			[
+				"pro",
+				"producto"
+			],
+			[
+				"pre",
+				"precio_venta"
+			],
+			[
+				"ven",
+				"vendido"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"id",
+				"id_total"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"Uni",
+				"UnidadMedida"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"uni",
+				"unidad_medida"
+			],
+			[
+				"sus",
+				"sustraidos"
+			],
+			[
+				"s",
+				"sustraidos"
+			],
+			[
+				"cant",
+				"cantidad_sustraida"
+			],
+			[
+				"inse",
+				"insertado"
+			],
+			[
+				"in",
+				"insertados"
+			],
+			[
+				"com",
+				"comprado"
+			],
+			[
+				"vend",
+				"vendidos"
+			],
+			[
+				"st",
+				"stock"
+			],
+			[
+				"S",
+				"SustraccionInmediata"
+			],
+			[
+				"produc",
+				"producto"
+			],
+			[
+				"Im",
+				"Inmediata"
+			],
+			[
+				"In",
+				"Insercion"
+			],
+			[
+				"provee",
+				"proveedor"
+			],
+			[
+				"prod",
+				"producto"
+			],
+			[
+				"verb",
+				"verbose_name_plural"
+			],
+			[
+				"M",
+				"Model"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"t",
+				"total"
+			],
+			[
+				"totl",
+				"total"
+			],
+			[
+				"sub",
+				"subtotal"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"nue",
+				"nuevo_cartel"
+			],
+			[
+				"nuev",
+				"nuevos_carteles"
+			],
+			[
+				"No",
+				"None"
+			],
+			[
+				"true",
+				"True"
+			],
+			[
+				"re",
+				"required"
+			],
+			[
+				"prop",
+				"propietario"
+			],
+			[
+				"Contr",
+				"ContratoPropietario"
+			],
+			[
+				"Crea",
+				"CreateView"
+			],
+			[
+				"numero",
+				"numero_cartel"
+			],
+			[
+				"ob",
+				"objects"
+			],
+			[
+				"num",
+				"numero_cartel"
+			],
+			[
+				"Carte",
+				"CartelUpdateView"
+			],
+			[
+				"numero_",
+				"numero_cartel"
+			],
+			[
+				"sigui",
+				"siguiente_numero"
+			],
+			[
+				"siguie",
+				"siguiente_numero"
+			],
+			[
+				"siguiente",
+				"siguiente_numero"
+			],
+			[
+				"anh",
+				"anho_actual"
+			],
+			[
+				"an",
+				"anho_actual"
+			],
+			[
+				"moo",
+				"monto_pago"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"ha",
+				"haber"
+			],
+			[
+				"cuenta",
+				"cuentacontable"
+			],
+			[
+				"cuent",
+				"cuenta"
+			],
+			[
+				"el",
+				"el_mensaje"
+			],
+			[
+				"fech",
+				"fecha_delta240"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"d",
+				"django"
+			],
+			[
+				"tiene",
+				"tiene_hijo"
+			],
+			[
+				"un",
+				"unProducto"
+			],
+			[
+				"ac",
+				"activo"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"m",
+				"models"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"altas",
+				"altasbajas"
+			],
+			[
+				"Al",
+				"AltaBajaProducto"
+			],
+			[
+				"costo",
+				"costo_promedio"
+			],
+			[
+				"tie",
+				"tiene_hijo"
+			],
+			[
+				"Pr",
+				"Producto"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "static/admin/css/base.css",
+			"settings":
+			{
+				"buffer_size": 18979,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ferresis/settings.py",
+			"settings":
+			{
+				"buffer_size": 3445,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cliente/views.py",
+			"settings":
+			{
+				"buffer_size": 579,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cliente/urls.py",
+			"settings":
+			{
+				"buffer_size": 243,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "presupuesto/forms.py",
+			"settings":
+			{
+				"buffer_size": 875,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "presupuesto/urls.py",
+			"settings":
+			{
+				"buffer_size": 360,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ferresis/urls.py",
+			"settings":
+			{
+				"buffer_size": 1107,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "presupuesto/views.py",
+			"settings":
+			{
+				"buffer_size": 1166,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "venta/views.py",
+			"settings":
+			{
+				"buffer_size": 62,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/admin/edit_inline/stacked.html",
+			"settings":
+			{
+				"buffer_size": 2396,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/moco/proyectos/ferresis/ferresis/producto/models.py",
+		"/home/moco/proyectos/ferresis/ferresis/producto/views.py",
+		"/home/moco/proyectos/ferresis/ferresis/producto/templates/admin/producto/producto/movimientoproducto_list.html",
+		"/home/moco/proyectos/ferresis/ferresis/compra/models.py",
+		"/home/moco/proyectos/ferresis/ferresis/presupuesto/models.py",
+		"/home/moco/proyectos/ferresis/ferresis/presupuesto/reports.py",
+		"/home/moco/proyectos/ferresis/ferresis/proveedor/admin.py",
+		"/home/moco/proyectos/ferresis/ferresis/producto/templates/admin/producto/producto/change_form.html",
+		"/home/moco/proyectos/ferresis/ferresis/presupuesto/admin.py",
+		"/home/moco/proyectos/ferresis/ferresis/ferresis.sublime-workspace",
+		"/home/moco/proyectos/chase/chase/presupuesto/forms.py",
+		"/home/moco/proyectos/chase/chase/presupuesto/views.py",
+		"/home/moco/proyectos/chase/chase/presupuesto/templates/edit/presupuesto_edit.html",
+		"/home/moco/proyectos/chase/chase/presupuesto/templates/edit/presupuesto_form.html"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/moco/Desktop/ferresis",
+			"/home/moco/Desktop/ferresis/entorno",
+			"/home/moco/Desktop/ferresis/ferresis/templates",
+			"/home/moco/Desktop/ferresis/entorno",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"movimiento_fecha_inicial",
+			"q",
+			"usuario_proyecto",
+			"Producto",
+			"producto",
+			"Producto",
+			"<form",
+			"linea",
+			"vendida",
+			"vendido",
+			"Venta",
+			"venta",
+			"\n",
+			"carga_inicial",
+			"venta",
+			"Venta",
+			"venta",
+			"Venta",
+			"venta",
+			"Venta",
+			"cliente",
+			"Cliente",
+			"cliente",
+			"Venta",
+			"venta",
+			"Venta",
+			"venta",
+			"unidad",
+			"0",
+			"id_detalleventa_set",
+			"Country",
+			"selected_country",
+			"country_name",
+			"all_cities",
+			"country_name",
+			"inlines.js",
+			"inline.js",
+			"inlines.js",
+			"+   ",
+			"table",
+			"javascript:void(calcular_total()",
+			"javascript:void(calcular_total)",
+			"inline-deletelink",
+			"javascript:void(0)",
+			"void(0)",
+			"inline-deletelink",
+			"#79aec8",
+			"static",
+			"costounitario",
+			"ContratoPropietarioForm",
+			"form",
+			"staticfiles",
+			"ASIENTO",
+			"reporte_contrato_cliente_pdf",
+			"contratopropietario_correlativos",
+			"ContratoCliente",
+			"ContratoClienteUpda",
+			"ContratoCliente",
+			"CartelForm",
+			"MiCartelForm",
+			"CrearCartelView",
+			"CartelUpdate",
+			"CartelCreateForm",
+			"defaul",
+			"Libros Contables",
+			"if not Notificacion.objects.filter(mensaje = el_mensaje):",
+			"un_cobro.numero",
+			"cant_notificaciones",
+			"show_notifications",
+			"{% show_notifications",
+			"{% show_notifications ",
+			"navbar_notificaciones.html",
+			"notificaciones",
+			"getCalendario",
+			"getCalendario(",
+			"Ver todas las notificaciones",
+			"Ver todas las notificaciones>",
+			"Ver todas las notificaciones",
+			"/notificaciones/notificacion/lis",
+			"producto",
+			"detalle_inventarios",
+			"documentar",
+			"simulo",
+			"simul*",
+			"simul ",
+			"simul",
+			"simulando",
+			"producto",
+			"produc"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"fecha_inicial_movimiento",
+			"Presupuesto",
+			"presupuesto",
+			"Presupuesto",
+			"producto",
+			"comprada",
+			"comprado",
+			"Compra",
+			"compra",
+			"presupuesto",
+			"Presupuesto",
+			"Compra",
+			"compra",
+			"presupuesto",
+			"Presupuesto",
+			"presupuesto",
+			"Presupuesto",
+			"proveedor",
+			"Proveedor",
+			"proveedor",
+			"Compra",
+			"compra",
+			"Compra",
+			"compra",
+			"Producto",
+			"producto",
+			"producto_id",
+			"all_precios",
+			"producto_id",
+			"    ",
+			"javascript:void(0)",
+			"javascript:void(calcular_total)",
+			"#ff1a1a",
+			"precio",
+			"if not Notificacion.objects.filter(mensaje = el_mensaje, pagado = False):",
+			"un_cobro.id"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 9,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "static/admin/css/base.css",
+					"settings":
+					{
+						"buffer_size": 18979,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6668.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ferresis/settings.py",
+					"settings":
+					{
+						"buffer_size": 3445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								881,
+								881
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 299.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "cliente/views.py",
+					"settings":
+					{
+						"buffer_size": 579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "cliente/urls.py",
+					"settings":
+					{
+						"buffer_size": 243,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "presupuesto/forms.py",
+					"settings":
+					{
+						"buffer_size": 875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								590,
+								590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "presupuesto/urls.py",
+					"settings":
+					{
+						"buffer_size": 360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ferresis/urls.py",
+					"settings":
+					{
+						"buffer_size": 1107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								693,
+								693
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "presupuesto/views.py",
+					"settings":
+					{
+						"buffer_size": 1166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "venta/views.py",
+					"settings":
+					{
+						"buffer_size": 62,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "templates/admin/edit_inline/stacked.html",
+					"settings":
+					{
+						"buffer_size": 2396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								242
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 25.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"templates/admin/venta/venta/change_form.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true
+}

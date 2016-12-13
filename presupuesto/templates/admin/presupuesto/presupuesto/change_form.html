@@ -1,0 +1,169 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls admin_static admin_modify %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+{{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}" />{% endblock %}
+
+{% block coltype %}colM{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} change-form{% endblock %}
+
+{% if not is_popup %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+&rsaquo; {% if has_change_permission %}<a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %}
+&rsaquo; {% if add %}{% trans 'Add' %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+</div>
+{% endblock %}
+{% endif %}
+
+{% block content %}<div id="content-main">
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools">
+    {% block object-tools-items %}
+    <li>
+        {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
+        <a href="{% add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
+    </li>
+    {% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}
+    {% endblock %}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.model_name }}_form" novalidate>{% csrf_token %}{% block form_top %}{% endblock %}
+<div>
+{% if is_popup %}<input type="hidden" name="{{ is_popup_var }}" value="1" />{% endif %}
+{% if to_field %}<input type="hidden" name="{{ to_field_var }}" value="{{ to_field }}" />{% endif %}
+{% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
+{% if errors %}
+    <p class="errornote">
+    {% if errors|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+    </p>
+    {{ adminform.form.non_field_errors }}
+{% endif %}
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset.html" %}
+{% endfor %}
+{% endblock %}
+
+{% block after_field_sets %}{% endblock %}
+
+{% block inline_field_sets %}
+{% for inline_admin_formset in inline_admin_formsets %}
+    {% include inline_admin_formset.opts.template %}
+{% endfor %}
+{% endblock %}
+
+{% block after_related_objects %}{% endblock %}
+
+{% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
+
+{% block admin_change_form_document_ready %}
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function() {
+                $('.add-another').click(function(e) {
+                    e.preventDefault();
+                    var event = $.Event('django:add-another-related');
+                    $(this).trigger(event);
+                    if (!event.isDefaultPrevented()) {
+                        showAddAnotherPopup(this);
+                    }
+                });
+                $('.related-lookup').click(function(e) {
+                    e.preventDefault();
+                    var event = $.Event('django:lookup-related');
+                    $(this).trigger(event);
+                    if (!event.isDefaultPrevented()) {
+                        showRelatedObjectLookupPopup(this);
+                    }
+                });
+                $('select').change(function(){
+                    vector = $(this).attr("id").split("-")
+                    if(vector[2] == "producto"){
+                        var optionSelected = $(this).find("option:selected");
+                        var valueSelected  = optionSelected.val();
+                        if(!valueSelected){
+                            $("#id_detallepresupuesto_set-" + vector[1] + "-precio option").remove();
+                            $("#id_detallepresupuesto_set-" + vector[1] + "-precio").append("<option value=\"\" selected=\"selected\">---------</option>");
+                            return
+                        }
+                        $.ajax({
+                            data : {'cnt' : valueSelected },
+                            url : "/admin/producto/producto/getpreciosventa",
+                            type : "get",
+                            success : function(data){
+
+                                console.log(data);
+                                $("#id_detallepresupuesto_set-" + vector[1] + "-precio option").remove();
+                                $("#id_detallepresupuesto_set-" + vector[1] + "-precio").append("<option value=\"\" selected=\"selected\">---------</option>");
+                                for (var i = data.length - 1; i >= 0; i--) {
+
+                                    $("#id_detallepresupuesto_set-" + vector[1] + "-precio").append('<option value='+ data[i].id +'>'+ data[i].precio +'</option>');
+                                }
+                            }
+                        });
+                    }
+                });
+
+            setTimeout(calcular_total, 1000);
+
+            {% if adminform and add %}
+                $('form#{{ opts.model_name }}_form :input:visible:enabled:first').focus()
+            {% endif %}
+            });
+        })(django.jQuery);
+
+
+
+
+    function calcular_subtotal(index){
+        var cantidad = $('#id_detallepresupuesto_set-'+index+'-cantidad').val()
+
+        var vector = $('#id_detallepresupuesto_set-'+index+'-precio option:selected').text().split(" ")
+
+        var precio = vector[0]
+
+        var descuento = $('#id_detallepresupuesto_set-'+index+'-descuento').val()
+
+        var subtotal = parseFloat(cantidad) * (parseFloat(precio) - parseFloat(descuento))
+
+        $('#id_detallepresupuesto_set-'+index+'-subtotal').val( parseInt(subtotal).toString() )
+    }
+
+
+    function calcular_total(){
+        var suma_subtotales = 0
+        $('.subtotal_iterable').each(function(){
+            var vector = (this.name).toString().split("-") // vector[1] tiene el indice
+
+            if($('#id_detallepresupuesto_set-'+vector[1]+'-precio option:selected').text() != '---------'){ 
+                calcular_subtotal(vector[1]) 
+                suma_subtotales = parseFloat(suma_subtotales) + parseFloat(this.value)
+            }
+        })
+
+        $('#id_total').val((parseFloat(suma_subtotales).toString()))
+        $('#id_total').val((parseFloat($('#id_total').val())-parseFloat($('#id_descuento').val())).toString())
+
+        setTimeout(calcular_total, 1000);
+    }
+
+    </script>
+{% endblock %}
+
+{# JavaScript for prepopulated fields #}
+{% prepopulated_fields_js %}
+
+</div>
+</form></div>
+{% endblock %}

@@ -1,0 +1,7 @@
+Django==1.9
+django-autocomplete-light==3.2.1
+django-smart-selects==1.2.6
+Pillow==3.4.2
+reportlab==3.3.0
+six==1.10.0
+xlwt==1.1.2

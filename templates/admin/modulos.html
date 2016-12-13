@@ -1,0 +1,212 @@
+            <!-- /.row -->
+            <div id="id_modulos" class="row">
+				
+				{% if perms.auth %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/auth">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-desktop fa-5x"></i>
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">SISTEMA</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+
+
+				{% if perms.caja %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/caja">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-laptop fa-5x"></i>
+									</div>
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">CAJA</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+				{% endif %}
+
+				{% if perms.cliente %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/cliente">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-group fa-5x"></i>
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">CLIENTES</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+
+
+				{% if perms.proveedor %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/proveedor">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-sitemap fa-5x"></i>										
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">PROVEEDORES</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+
+
+				{% if perms.producto %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/producto">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-cubes fa-5x"></i>
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">PRODUCTOS</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+                
+                <!--
+				{% if perms.presupuesto %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/presupuesto">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-file-text fa-5x"></i>
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">PRESUPUESTOS</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+                -->
+
+				{% if perms.venta %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/venta">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-money fa-5x"></i>
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">VENTAS</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+
+				{% if perms.compra %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/compra">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-shopping-cart fa-5x"></i>
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">COMPRAS</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+                
+
+                <!--
+				{% if perms.contabilidad %}
+                <div class="col-lg-3 col-md-6">
+                    <a href="/admin/contabilidad">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col-xs-12 text-center">
+										<i class="fa fa-university fa-5x" aria-hidden="true"></i>
+
+									</div>
+	 
+								</div>
+							</div>
+                            <div class="panel-footer">
+                                <span class="pull-left">CONTABILIDAD</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+						</div>
+                    </a>
+                </div>
+                {% endif %}
+				-->
+
+
+            </div>
+            <!-- /.row -->
