@@ -56,9 +56,13 @@ class Producto(models.Model):
 
 		vendidos = DetalleVenta.objects.filter(producto_id = self.id)
 		cantidad_vendida = 0
+		print self.id
 		precio_venta = PrecioVentaProducto.objects.filter(producto_id = self.id)
 		precio_venta = precio_venta[0]
-		
+
+
+		print "111111"
+
 		for vendido in vendidos:
 			if vendido.precio == precio_venta:
 				cantidad_vendida = cantidad_vendida + vendido.cantidad

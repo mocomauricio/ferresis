@@ -1,0 +1,9 @@
+{% extends 'admin/base_site.html' %}
+
+{% block content %}
+	<p>
+	{% for i in precio_compra %}
+		{{ i.producto.id }} <br>
+	{% endfor %}
+	</p>
+{% endblock %}

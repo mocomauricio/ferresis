@@ -24,6 +24,9 @@ urlpatterns = [
     url(r'^unidadmedida/$', UnidadMedidaListView.as_view(),name='unidadmedida_lis'),
 
     url(r'^producto/$', ProductoListView.as_view(),name='producto_lis'),
+
+    url(r'^corrompidos/$', listar_corrompidos),
+
     url(r'^$', producto_presentacion),
 
 ]

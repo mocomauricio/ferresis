@@ -153,3 +153,9 @@ def producto_presentacion(request):
     return render_to_response('admin/presentacion.html', {'titulo': titulo, 'descripcion': descripcion}, context)
 
 
+def listar_corrompidos(request):
+    context = RequestContext(request)
+    productos = Producto.objects.all().order_by('id')
+    precio_compra = PrecioVentaProducto.objects.all().order_by('producto_id')
+
+    return render_to_response('corrompidos.html', {'productos': productos, 'precio_compra':precio_compra}, context)
