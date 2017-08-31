@@ -194,9 +194,15 @@
 	</li>
 	{% endif %}
 	
-	{% if perms.venta.add_venta or perms.venta.change_venta or perms.venta.delete_venta %}
+	{% if perms.venta.ver_ventas_todo %}
 	<li>
-		<a href="/admin/venta/venta/">LISTAR</a>
+		<a href="/admin/venta/venta/">VENTAS</a>
+	</li>
+	{% endif %}
+
+	{% if perms.venta.ver_ventas_dia %}
+	<li>
+		<a href="/admin/venta/ventadiaria/">VENTAS DEL DIA</a>
 	</li>
 	{% endif %}
 

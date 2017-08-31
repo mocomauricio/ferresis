@@ -25,7 +25,7 @@ SECRET_KEY = '@!gbsaff09792c=$wei212hu5suy+c%86q2u6f1sra$pwke5zi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.7',]
 
 
 # Application definition
@@ -135,6 +135,10 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
-
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+STATICFILES_DIRS = [os.path.join(os.path.join(BASE_DIR, 'static'))]
+STATIC_ROOT = os.path.join(os.path.join(BASE_DIR, 'staticfiles'))
+MEDIA_ROOT= BASE_DIR+"/media/"
+MEDIA_URL="/media/"
 
 USE_DJANGO_JQUERY = False

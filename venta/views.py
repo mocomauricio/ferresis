@@ -7,6 +7,7 @@ from django.views.generic.list import ListView
 
 from cliente.models import *
 from venta.models import *
+from datetime import datetime
 
 class VentaDetailView(DetailView):
     model = Venta
@@ -26,6 +27,7 @@ class VentaListView(ListView):
     def get_queryset(self):
         ventas = Venta.objects.all()
 
+
         q = self.request.GET.get('q', '')
         if q != '':
             ventas = ventas.filter(numero_factura=q)
@@ -33,7 +35,6 @@ class VentaListView(ListView):
         cliente_id = self.request.GET.get('cliente_id', '')
         if cliente_id != '':
             ventas = ventas.filter(cliente_id=cliente_id)
-
 
         return ventas.order_by('-id')
 
@@ -44,6 +45,29 @@ class VentaListView(ListView):
         context['cliente_id'] = int(self.request.GET.get('cliente_id', '')) if (self.request.GET.get('cliente_id', '') != '') else ''
         return context
 
+
+class VentaDiariaListView(VentaListView):
+
+    def get_queryset(self):
+        ventas = Venta.objects.filter(fecha=datetime.now())
+
+        q = self.request.GET.get('q', '')
+        if q != '':
+            ventas = ventas.filter(numero_factura=q)
+
+        cliente_id = self.request.GET.get('cliente_id', '')
+        if cliente_id != '':
+            ventas = ventas.filter(cliente_id=cliente_id)
+
+        return ventas.order_by('-id')
+
+
+    def get_context_data(self, **kwargs):
+        context = super(VentaListView, self).get_context_data(**kwargs)
+        context['q'] = self.request.GET.get('q', '')
+        context['clientes'] = Cliente.objects.all()
+        context['cliente_id'] = int(self.request.GET.get('cliente_id', '')) if (self.request.GET.get('cliente_id', '') != '') else ''
+        return context
 
 def venta_presentacion(request):
     context = RequestContext(request)

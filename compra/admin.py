@@ -5,9 +5,15 @@ from compra.forms import CompraForm, DetalleCompraForm
 # Register your models here.
 
 class DetalleCompraInline(admin.TabularInline):
-    model = DetalleCompra
-    form = DetalleCompraForm
-    extra = 5
+	model = DetalleCompra
+	form = DetalleCompraForm
+	extra = 5
+
+	fieldsets = (
+		(None, {
+			'fields': [('producto', 'cantidad', 'precio', 'precio_unitario', 'subtotal')]
+		}),
+	)
 
 class CompraAdmin(admin.ModelAdmin):
 	inlines = (DetalleCompraInline,)

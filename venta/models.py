@@ -6,10 +6,11 @@ from datetime import datetime
 CONDICION = (('CONTADO', 'CONTADO'),('CREDITO','CREDITO'))
 
 class Venta(models.Model):
+
 	numero_factura = models.CharField(max_length=20, null=True, blank=True)
 	cliente = models.ForeignKey('cliente.Cliente', null=True, blank=True)
 	condicion = models.CharField(choices=CONDICION, max_length = 10, default='CONTADO')
-	fecha = models.DateField(default=datetime.now)
+	fecha = models.DateField(auto_now_add=True)
 	descuento = models.DecimalField(max_digits=15, decimal_places=2, default=0)
 	total = models.DecimalField(max_digits=15, decimal_places=2, default=0)
 
@@ -19,6 +20,11 @@ class Venta(models.Model):
 	class Meta:
 		verbose_name = 'Venta'
 		verbose_name_plural = 'Ventas'
+
+		permissions = (
+			("ver_ventas_todo", "Puede ver todas las ventas"),
+			("ver_ventas_dia", "Puede ver las ventas del dia"),
+		)
 
 class DetalleVenta(models.Model):
 	venta = models.ForeignKey(Venta)
