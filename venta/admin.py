@@ -9,6 +9,12 @@ class DetalleVentaInline(admin.TabularInline):
 	form = DetalleVentaForm
 	extra = 5
 
+	fieldsets = (
+		(None, {
+			'fields': [('producto', 'cantidad', 'precio', 'precio_unitario', 'subtotal')]
+		}),
+	)
+
 class VentaAdmin(admin.ModelAdmin):
 	inlines = (DetalleVentaInline,)
 	form = VentaForm
