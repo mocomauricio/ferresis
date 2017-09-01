@@ -20,4 +20,27 @@ class VentaAdmin(admin.ModelAdmin):
 	search_fields = ('numero_factura','fecha','cliente__nombre')
 
 
+	def response_add(self, request, obj, post_url_continue=None):
+		res = super(VentaAdmin, self).response_add(request, obj,post_url_continue)
+		if "next" in request.GET:
+			return HttpResponseRedirect(request.GET['next'])
+		else:
+			return res
+			
+			
+	def response_change(self, request, obj):
+		res = super(VentaAdmin, self).response_change(request, obj)
+		if "next" in request.GET:
+			return HttpResponseRedirect(request.GET['next'])
+		else:
+			return res
+
+
+	def response_delete(self,request, obj_display, obj_id):
+		res = super(VentaAdmin, self).response_delete(request, obj_display, obj_id)
+		if "next" in request.GET:
+			return HttpResponseRedirect(request.GET['next'])
+		else:
+			return res
+
 admin.site.register(Venta, VentaAdmin)

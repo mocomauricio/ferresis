@@ -70,7 +70,7 @@
 
         <div id="next_button" align="right">
             {% if perms.venta.add_venta %}
-                <button type="button" class="btn btn-primary" onclick="location.href='/admin/venta/venta/add/';" title="Agregar venta">
+                <button type="button" class="btn btn-primary" onclick="location.href='/admin/venta/venta/add/?next={{ request.path }}';" title="Agregar venta">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
             {% endif %}
@@ -108,13 +108,13 @@
 
                     <td>
                         {% if perms.venta.change_venta %}
-                        <button type="button" class="btn btn-warning btn-xs" onclick="location.href='/admin/venta/venta/{{ venta.id }}/';" title="Editar">
+                        <button type="button" class="btn btn-warning btn-xs" onclick="location.href='/admin/venta/venta/{{ venta.id }}/?next={{ request.path }}';" title="Editar">
                             <i class="fa fa-pencil"></i>
                         </button>
                         {% endif %}
 
                         {% if perms.venta.delete_venta %}
-                        <button type="button" class="btn btn-danger btn-xs" onclick="location.href='/admin/venta/venta/{{ venta.id }}/delete/';" title="Borrar">
+                        <button type="button" class="btn btn-danger btn-xs" onclick="location.href='/admin/venta/venta/{{ venta.id }}/delete/?next={{ request.path }}';" title="Borrar">
                             <i class="fa fa-minus"></i>
                         </button>
                         {% endif %}

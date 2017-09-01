@@ -210,7 +210,7 @@
 
 	{% if perms.presupuesto.add_presupuesto %}
 	<li>
-		<a href="/admin/presupuesto/presupuesto/add/">AGREGAR</a>
+		<a href="/admin/presupuesto/presupuesto/add/?next={{ request.path }}">AGREGAR</a>
 	</li>
 	{% endif %}
 	
