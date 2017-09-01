@@ -1,6 +1,7 @@
 from django.contrib import admin
 from venta.models import Venta, DetalleVenta
 from venta.forms import VentaForm, DetalleVentaForm
+from django.http import HttpResponseRedirect
 
 # Register your models here.
 

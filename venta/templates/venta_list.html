@@ -108,7 +108,7 @@
 
                     <td>
                         {% if perms.venta.change_venta %}
-                        <button type="button" class="btn btn-warning btn-xs" onclick="location.href='/admin/venta/venta/{{ venta.id }}/?next={{ request.path }}';" title="Editar">
+                        <button type="button" class="btn btn-warning btn-xs" onclick="location.href='/admin/venta/venta/{{ venta.id }}/change/?next={{ request.path }}';" title="Editar">
                             <i class="fa fa-pencil"></i>
                         </button>
                         {% endif %}

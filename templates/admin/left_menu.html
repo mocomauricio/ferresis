@@ -190,7 +190,7 @@
 
 	{% if perms.venta.add_venta %}
 	<li>
-		<a href="/admin/venta/venta/add/">AGREGAR</a>
+		<a href="/admin/venta/venta/add/?next={{ request.path }}">AGREGAR</a>
 	</li>
 	{% endif %}
 	
@@ -210,7 +210,7 @@
 
 	{% if perms.presupuesto.add_presupuesto %}
 	<li>
-		<a href="/admin/presupuesto/presupuesto/add/?next={{ request.path }}">AGREGAR</a>
+		<a href="/admin/presupuesto/presupuesto/add/">AGREGAR</a>
 	</li>
 	{% endif %}
 	
